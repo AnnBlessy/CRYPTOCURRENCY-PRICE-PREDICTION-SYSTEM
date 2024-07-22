@@ -18,7 +18,7 @@ from datetime import datetime
 st.set_option('deprecation.showfileUploaderEncoding', False)
 st.set_page_config(page_icon=":coin:", layout="wide")
 
-image = Image.open("C:/Users/annbl/Downloads/Bitcoin Price Predictions/Bitcoin-Logo.png")
+image = Image.open("Bitcoin-Logo.png")
 col1, col2 = st.columns([0.1,0.6])
 with col1:
     st.image(image,width=150)
@@ -291,7 +291,7 @@ def Live_updates():
             
             
 if selected == "Bitcoin":
-    df = pd.read_csv("C:/Users/annbl/Downloads/Bitcoin Price Predictions/coin_Bitcoin.csv", encoding='utf-8')
+    df = pd.read_csv("coin_Bitcoin.csv", encoding='utf-8')
     
     st.title("BITCOIN (BTC)")
     global numeric_columns, date_column
@@ -300,7 +300,7 @@ if selected == "Bitcoin":
     df.set_index('Date', inplace=True)
     
     st.markdown(""" """)
-    image = Image.open("C:/Users/annbl/Downloads/Bitcoin Price Predictions/Coin Images/bitcoin.png")
+    image = Image.open("Coin Images/bitcoin.png")
     col1, col2 = st.columns([0.1,0.4])
     with col1:
         st.image(image,width=1070)
@@ -341,14 +341,14 @@ if selected == "Bitcoin":
     class CustomMSE(MeanSquaredError):
         pass
     
-    model = load_model("C:/Users/annbl/Downloads/Bitcoin Price Predictions/models/model_BTC.h5", custom_objects={'mse': CustomMSE})  
-    scaler = joblib.load("C:/Users/annbl/Downloads/Bitcoin Price Predictions/models/scaler_btc.pkl")
+    model = load_model("models/model_BTC.h5", custom_objects={'mse': CustomMSE})  
+    scaler = joblib.load("models/scaler_btc.pkl")
     
     st.header("Price Prediction for BTC")
     predict_closing_price()
      
 if selected == "Monero":
-    df = pd.read_csv("C:/Users/annbl/Downloads/Bitcoin Price Predictions/coin_Monero.csv")
+    df = pd.read_csv("coin_Monero.csv")
     
     st.title("MONERO (XMR)")
     global numeric_columns, date_column
@@ -357,7 +357,7 @@ if selected == "Monero":
     df.set_index('Date', inplace=True)
     
     st.markdown(""" """)
-    image = Image.open("C:/Users/annbl/Downloads/Bitcoin Price Predictions/Coin Images/monero.jpg")
+    image = Image.open("Coin Images/monero.jpg")
     col1, col2 = st.columns([0.1,0.5])
     with col1:
         st.image(image,width=1070)
@@ -397,15 +397,15 @@ if selected == "Monero":
     class CustomMSE(MeanSquaredError):
         pass
     
-    model = load_model("C:/Users/annbl/Downloads/Bitcoin Price Predictions/models/model_XMR.h5", custom_objects={'mse': CustomMSE})  
-    scaler = joblib.load("C:/Users/annbl/Downloads/Bitcoin Price Predictions/models/scaler_xmr.pkl")
+    model = load_model("models/model_XMR.h5", custom_objects={'mse': CustomMSE})  
+    scaler = joblib.load("models/scaler_xmr.pkl")
     
     st.header("Price Prediction for XMR")
     predict_closing_price()
     
 
 if selected == "Solana":
-    df = pd.read_csv("C:/Users/annbl/Downloads/Bitcoin Price Predictions/coin_Solana.csv")
+    df = pd.read_csv("coin_Solana.csv")
     
     st.title("SOLANA (SOL)")
     global numeric_columns, date_column
@@ -414,7 +414,7 @@ if selected == "Solana":
     df.set_index('Date', inplace=True)
     
     st.markdown(""" """)
-    image = Image.open("C:/Users/annbl/Downloads/Bitcoin Price Predictions/Coin Images/solana.png")
+    image = Image.open("Coin Images/solana.png")
     col1, col2 = st.columns([0.1,0.5])
     with col1:
         st.image(image,width=1070)
@@ -454,14 +454,14 @@ if selected == "Solana":
     class CustomMSE(MeanSquaredError):
         pass
     
-    model = load_model("C:/Users/annbl/Downloads/Bitcoin Price Predictions/models/model_SOL.h5", custom_objects={'mse': CustomMSE})  
-    scaler = joblib.load("C:/Users/annbl/Downloads/Bitcoin Price Predictions/models/scaler_sol.pkl")
+    model = load_model("models/model_SOL.h5", custom_objects={'mse': CustomMSE})  
+    scaler = joblib.load("models/scaler_sol.pkl")
     
     st.header("Price Prediction for SOL")
     predict_closing_price()
     
 if selected == "Ethereum":
-    df = pd.read_csv("C:/Users/annbl/Downloads/Bitcoin Price Predictions/coin_Ethereum.csv")
+    df = pd.read_csv("coin_Ethereum.csv")
     
     st.title("ETHEREUM (ETH)")
     global numeric_columns, date_column
@@ -470,7 +470,7 @@ if selected == "Ethereum":
     df.set_index('Date', inplace=True)
     
     st.markdown(""" """)
-    image = Image.open("C:/Users/annbl/Downloads/Bitcoin Price Predictions/Coin Images/Ethereum.jpg")
+    image = Image.open("Coin Images/Ethereum.jpg")
     col1, col2 = st.columns([0.1,0.5])
     with col1:
         st.image(image,width=1070)
@@ -510,8 +510,8 @@ if selected == "Ethereum":
     class CustomMSE(MeanSquaredError):
         pass
     
-    model = load_model("C:/Users/annbl/Downloads/Bitcoin Price Predictions/models/model_ETH.h5", custom_objects={'mse': CustomMSE})  
-    scaler = joblib.load("C:/Users/annbl/Downloads/Bitcoin Price Predictions/models/scaler_eth.pkl")
+    model = load_model("models/model_ETH.h5", custom_objects={'mse': CustomMSE})  
+    scaler = joblib.load("models/scaler_eth.pkl")
     
     st.header("Price Prediction for ETH")
     predict_closing_price()
